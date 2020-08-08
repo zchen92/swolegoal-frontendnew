@@ -1,0 +1,20 @@
+.line-through {
+    color: blue;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.list {
+    list-style: none;
+    color: red
+}
+
+.h3Goal {
+    text-decoration: line-through;
+}
+
+.collapse.navbar-collapse{
+    background: url("https://i.imgur.com/do73SsO.jpg")!important;
+    text-align: right;
+    color:blue !important 
+}
