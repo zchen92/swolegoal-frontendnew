@@ -14,7 +14,7 @@ SwoleGoals is a full-CRUD application designed to help task-oriented users achie
 7. HTML
 
 ### Step 4 - Deploy with Heroku 
-Link: https://orderly-project.herokuapp.com/
+Link: coming soon!
 
 ## Future Goals:
 
