@@ -64,26 +64,28 @@ export default class Register extends Component {
                         <div>
                             <h6 className='user-taken-h6'>{`Username ${this.state.err}`}</h6>
                             <form onSubmit={this.handleSubmit} className='form-signin'>
-                                <label htmlFor='username' className="sr-only">
-                                    <input
-                                        className='form-control'
-                                        placeholder='Create username'
-                                        type='username'
-                                        name='username'
-                                        id='username'
-                                        onChange={this.handleInput}
-                                    />
-                                </label>
-                                <label htmlFor='password' className="sr-only">
-                                    <input
-                                        className='form-control'
-                                        placeholder='Create password'
-                                        type='password'
-                                        name='password'
-                                        id='password'
-                                        onChange={this.handleInput}
-                                    />
-                                </label>
+                                <div className="formDiv">
+                                    <label htmlFor='username' className="sr-only">
+                                        <input
+                                            className='form-control'
+                                            placeholder='Create username'
+                                            type='username'
+                                            name='username'
+                                            id='username'
+                                            onChange={this.handleInput}
+                                        />
+                                    </label>
+                                    <label htmlFor='password' className="sr-only">
+                                        <input
+                                            className='form-control'
+                                            placeholder='Create password'
+                                            type='password'
+                                            name='password'
+                                            id='password'
+                                            onChange={this.handleInput}
+                                        />
+                                    </label>
+                                </div>
                                 <div className="checkbox mb-3">
                                     <label>
                                     <input type="checkbox" value="remember-me"> Remember me</input>
@@ -94,26 +96,28 @@ export default class Register extends Component {
                         </div>
                     ) : (
                         <form onSubmit={this.handleSubmit} className='form-signin'>
-                            <label htmlFor='username'>
-                                <input
-                                    className='form-control mx-sm-4 login-input'
-                                    placeholder='Create username'
-                                    type='username'
-                                    name='username'
-                                    id='username'
-                                    onChange={this.handleInput}
-                                />
-                            </label>
-                            <label htmlFor='password'>
-                                <input
-                                    className='form-control mx-sm-5 login-input'
-                                    placeholder='Create password'
-                                    type='password'
-                                    name='password'
-                                    id='password'
-                                    onChange={this.handleInput}
-                                />
-                            </label>
+                            <div className="formDiv">
+                                <label htmlFor='username'>
+                                    <input
+                                        className='form-control mx-sm-4 login-input'
+                                        placeholder='Create username'
+                                        type='username'
+                                        name='username'
+                                        id='username'
+                                        onChange={this.handleInput}
+                                    />
+                                </label>
+                                <label htmlFor='password'>
+                                    <input
+                                        className='form-control mx-sm-4 login-input'
+                                        placeholder='Create password'
+                                        type='password'
+                                        name='password'
+                                        id='password'
+                                        onChange={this.handleInput}
+                                    />
+                                </label>
+                            </div>
                             <div className="checkbox mb-3">
                                     <label>
                                     <input type="checkbox" value="remember-me"/> Remember me

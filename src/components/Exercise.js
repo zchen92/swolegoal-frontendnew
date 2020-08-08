@@ -175,34 +175,39 @@ function Exercise(props) {
 
         
     return(
-        <div className="container-fluid"> 
+        <div className="container-fluid exercise"> 
             {showModal === false ? 
-                <div>
-                    <div>
-                        <h2>Set Up Tomorrow for Success!</h2>
-                        <form onSubmit={handleSubmit} className="form-group">
-                            <label htmlFor="day">Day</label>
-                            <input type="text" id="day" onChange={handleChange} className="form-control"/>
-                            <label htmlFor="description">Description</label>
-                            <input type="text" id="description" onChange={handleChange} className="form-control"/>
-                            <input type="submit" className="submit" />
-                        </form>
+                <div className="flexFrontPage">
+                    <div className="flexFrontPageLeft">
+                        <div>
+                            <h2>Set Up Tomorrow for Success!</h2>
+                            <form onSubmit={handleSubmit} className="form-group">
+                                <label htmlFor="day">Day</label>
+                                <input type="text" id="day" onChange={handleChange} className="form-control"/>
+                                <label htmlFor="description">Description</label>
+                                <input type="text" id="description" onChange={handleChange} className="form-control"/>
+                                <input type="submit" className="submit" />
+                            </form>
+                        </div>
                     </div>
+                    <div className ="flexFrontPageRight">
                     {exercises.length && exercises.map(exercise=>{
                         // console.log(exercise, exercise.user_id, localStorage.id)
                         return(
                             <>
                                 {exercise.user_id === parseInt(localStorage.id) ?
                                 <div>
-                                    <h3>{exercise.day} : {exercise.description}</h3>
-                                    <button onClick={()=>handleDelete(exercise.id)} type="button" className="btn btn-danger">Delete Day</button>
-                                    <button onClick={()=>toggleEdit(exercise)} type="button" className="btn btn-warning">Edit my Day</button>
-                                    <button onClick={()=>toggleModal(exercise)} type="button" className="btn btn-primary">See This Day</button>
+                                    <h3>
+                                        <button onClick={()=>handleDelete(exercise.id)} type="button" className="btn btn-danger"><i className="fa fa-trash-alt"></i></button>
+                                        <button onClick={()=>toggleEdit(exercise)} type="button" className="btn btn-warning"><i class="far fa-edit"></i></button>
+                                        <button onClick={()=>toggleModal(exercise)} type="button" className="btn btn-primary"><i className="fas fa-search"></i></button>
+                                        {exercise.day} : {exercise.description}
+                                    </h3>
                                     {editing===true ? 
                                         <div>
                                             {exercise.id === exerciseId ? 
                                                 <div>
-                                                    <h1>Edit My Day</h1>
+                                                    <h1>I changed my mind...</h1>
                                                     <form onSubmit={handleEdit}>
                                                         <label htmlFor="day">Day</label>
                                                         <input type="text" id="editedDay" onChange={handleChange}/>
@@ -216,38 +221,54 @@ function Exercise(props) {
                                     : null}
                                  </div> : null}              
                             </>)})}
-                </div> : 
+                </div> </div>: 
                 <div>
-                    <div>
-                        <h1>This Is My Day</h1>
-                        <h2>{modalExercise.day}: {modalExercise.description}</h2>
-                        <div className="shadow p-3 mb-5 bg-white rounded">{modalExercise.goals.map(goal=>{state.items.push(goal)
-                            console.log(state.items)
-                            return(
-                                <div className="ListDiv">
-                                    <ul className="list">
-                                        <li className={className} id={`${goal.id}`} style={{textDecoration:'none'}} onClick={(e)=>toggleStrikeThrough(goal.id, e)}>
-                                            <h3 className="h3Goal">{goal.activity}:</h3><p> {goal.description}</p>
-                                        </li>
-                                    </ul>
-                                    <button onClick={()=>deleteGoal(goal.id)} type="button" className="btn btn-danger">I'm not feeling this one</button>
-                                </div>
-                            )
-                            })}
+                    <div className="flexGoals">
+
+                    <div className="flexGoalsLeft">
+                            <div className="newGoalDiv">
+                                <h1>Add a new goal!</h1>
+                                <h4>{modalExercise.day}: {modalExercise.description}</h4>
+                                <form onSubmit={(event)=>handleNewSubmit(event)} className="form-group">
+                                    <label htmlFor="activity">Activity</label>
+                                    <input type="text" id="newGoalActivity" onChange={handleChange} className="form-control"/>
+                                    <label htmlFor="description">Description</label>
+                                    <input type="text" id="newGoalDescription"onChange={handleChange} className="form-control"/>
+                                    <input type="submit" className="submit" />
+                                </form>
+                            </div>
+                            <div>
+                                <button onClick={toggleModal} type="button" className="btn btn-warning">See All Days</button>
+                            </div>
                         </div>
-                        <div>
-                            <h2>Add a new goal!</h2>
-                            <form onSubmit={(event)=>handleNewSubmit(event)} className="form-group">
-                                <label htmlFor="activity">Activity</label>
-                                <input type="text" id="newGoalActivity" onChange={handleChange} className="form-control"/>
-                                <label htmlFor="description">Description</label>
-                                <input type="text" id="newGoalDescription"onChange={handleChange} className="form-control"/>
-                                <input type="submit" className="submit" />
-                            </form>
+
+                        <div className="flexGoalsRight">
+                            <div className="myDay">
+                                <h1>This Is My Day</h1>
+                            </div>
+                            <div className="shadow p-3 mb-5 bg-white rounded">{modalExercise.goals.map(goal=>{state.items.push(goal)
+                                console.log(state.items)
+                                return(
+                                    <div className="ListDiv">
+                                        <ul className="list">
+                                            <li className={className} id={`${goal.id}`} style={{textDecoration:'none'}} onClick={(e)=>toggleStrikeThrough(goal.id, e)}>
+                                            <h3 className="h3Goal">
+                                                <button onClick={()=>deleteGoal(goal.id)} type="button" className="btn btn-danger">
+                                                    <i className="fa fa-trash-alt"></i>
+                                                </button> 
+                                                {goal.activity}:
+                                            </h3>
+                                            <h4 className="goalDescription"> {goal.description}</h4>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                )
+                                })}
+                            </div>
                         </div>
-                        <div>
-                            <button onClick={toggleModal} type="button" className="btn btn-warning">See All Days</button>
-                        </div>
+
+                       
                     </div>
                 </div>
         }</div>

@@ -1,21 +1,102 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #1C2B4A;
+    /* background-color: #7CC0CD; */
+}
+
+.btn {
+    margin: .5em
+}
+
+/* Exercise Component */
+
+.exercise {
+    background-color: #7CC0CD;
+}
+
+/* Font Page */
+
+.flexFrontPage {
+    display: flex
+}
+
+.flexFrontPageLeft {
+    width: 40%;
+    margin: 20px
+}
+
+.flexFrontPageRight {
+    width: 60%;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin: 5px;
+}
+
+/* Goals */
+
 .line-through {
-    /* color: blue;
-    opacity: 0.5;
-    font-style: italic; */
     text-decoration: line-through;
 }
 
 .list {
     list-style: none;
-    color: red
 }
 
-.h3Goal {
-    text-decoration: line-through;
+.flexGoals {
+    display: flex;
 }
 
-.collapse.navbar-collapse{
-    background: url("https://i.imgur.com/do73SsO.jpg")!important;
-    text-align: right;
-    color:blue !important 
+.flexGoalsLeft {
+    width: 40%;
+    margin: 20px;
+}
+
+.flexGoalsRight {
+    width: 60%;
+    margin: 20px;
+}
+
+.myDay {
+    text-align: center;
+}
+
+.goalDescription{
+    margin-left: 50px;
+}
+
+/* Nav Component */
+.navbar-default{
+    /* background: url("https://i.imgur.com/do73SsO.jpg")!important;
+    text-align: right !important;
+    color:blue !important  */
+    /* background-color: red; */
+    background: none
+    /* background-image: url("https://i.imgur.com/do73SsO.jpg"); */
+}
+
+.navbar{
+    background-image: url("https://i.imgur.com/do73SsO.jpg")
+}
+
+
+/* Footer Component */
+.blockquote-footer {
+    margin-top: 20px;
+}
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
+    /* margin-left: -20px; */
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
 }

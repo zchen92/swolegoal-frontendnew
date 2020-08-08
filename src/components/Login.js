@@ -66,29 +66,30 @@ export default class Login extends Component {
                     <img className="mb-4" src="https://i.imgur.com/AZWXyaj.png?2" alt width="72" height="72"></img>
                         <h1 className='h3 mb-3 font-weight-normal'>Login</h1>
                         <form onSubmit={this.handleSubmit} className=''>
-                        {/* <i className='far fa-dumbbell'></i>  */}
-                            <label htmlFor='username'>
-                                <input
-                                    className='form-control mx-sm-4 login-input'
-                                    placeholder='Enter Username'
-                                    type='text'
-                                    name='username'
-                                    id='username'
-                                    required={true}
-                                    onChange={this.handleInput}
-                                />
-                            </label>
-                            <label htmlFor='password'>
-                                <input
-                                    className='form-control mx-sm-5 login-input'
-                                    placeholder='Enter password'
-                                    type='password'
-                                    name='password'
-                                    id='password'
-                                    required={true}
-                                    onChange={this.handleInput}
-                                />
-                            </label>
+                            <div class="formDiv">
+                                <label htmlFor='username'>
+                                    <input
+                                        className='form-control mx-sm-4 login-input'
+                                        placeholder='Enter Username'
+                                        type='text'
+                                        name='username'
+                                        id='username'
+                                        required={true}
+                                        onChange={this.handleInput}
+                                    />
+                                </label>
+                                <label htmlFor='password'>
+                                    <input
+                                        className='form-control mx-sm-4 login-input'
+                                        placeholder='Enter password'
+                                        type='password'
+                                        name='password'
+                                        id='password'
+                                        required={true}
+                                        onChange={this.handleInput}
+                                    />
+                                </label>
+                            </div>
                             <div className="checkbox mb-3">
                                     <label>
                                     <input type="checkbox" value="remember-me"/> Remember me

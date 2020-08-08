@@ -9,8 +9,8 @@ export default class App extends Component {
         return (
             <div className='App'>
                 <Nav />
-                <h2 className="text-center">Hi, welcome to SwoleGoals!</h2>
-                <p className="blockquote">SwoleGoals is a full-CRUD application designed to help task-oriented users achieve their desired fitness goals. The user simply creates a secure account, and enters the day and the fitness goal for the day (i.e Mondays are my leg days). Within each day, they can enter specific activities they want to complete, along with a description of the activity, such as the number of sets or repetitions, duration of activity, or links to tutorials they want to refer to. With each activity they complete, they are able to feel the accomplishment by crossing it off the list. The application entails Ruby on Raiils on the backend, React on the front end, and basic CSS and Bootstrap for the final design. Simple as that. Let's get swole!</p>
+                <h2 className="text-center">Hi, welcome to Swole Goals!</h2>
+                <p className="blockquote">Swole Goals is a full-CRUD application designed to help task-oriented users achieve their desired fitness goals. The user simply creates a secure account, and enters the day and the fitness goal for the day (i.e Mondays are my leg days). Within each day, they can enter specific activities they want to complete, along with a description of the activity, such as the number of sets or repetitions, duration of activity, or links to tutorials they want to refer to. With each activity they complete, they are able to feel the accomplishment by crossing it off the list. The application entails Ruby on Raiils on the backend, React on the front end, and basic CSS and Bootstrap for the final design. Simple as that. Let's get swole!</p>
                 <h2 className="text-center">About Me</h2>
                 <div className="text-center">
                     <img src="https://i.imgur.com/vuX3ls7.png" alt="Zoe Chen" width="150" height="200" className="img-thumbnail" ></img>
