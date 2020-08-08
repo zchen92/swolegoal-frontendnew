@@ -113,7 +113,6 @@ function Exercise(props) {
                 setShowModal(true)
                 setModalExercise(exercise)
             } else setShowModal(false)
-
         }
 
         const updateModalExercise = () => {
