@@ -27,7 +27,7 @@ function Exercise(props) {
     }
 
     useEffect(()=>{
-        fetch(`${Url}`)
+        fetch(`${Url}/exercises`)
         .then(res => res.json())
         .then(jsonExercises=> setExercises(jsonExercises))
         .catch(error => console.error(error))
@@ -50,7 +50,7 @@ function Exercise(props) {
             description: description,
             user_id: user_id
         }
-        fetch(`${Url}`, {
+        fetch(`${Url}/exercises`, {
           body: JSON.stringify(data),
           method: 'POST',
         headers: {
@@ -128,7 +128,7 @@ function Exercise(props) {
                 method: 'DELETE',
             }).then(() => {
                 updateModalExercise()
-                fetch(`${Url}`)
+                fetch(`${Url}/exercises`)
                 .then(res => res.json())
                 .then(jsonExercises=> setExercises(jsonExercises))
                 .catch(error => console.error(error))
