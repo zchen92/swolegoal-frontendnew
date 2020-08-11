@@ -1,3 +1,3 @@
-const Url = 'http://localhost:3000/exercises'
+const Url = 'https://swolegoal-api.herokuapp.com'
 
 export default Url 

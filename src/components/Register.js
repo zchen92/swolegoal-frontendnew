@@ -16,7 +16,7 @@ export default class Register extends Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state.err, 'from handle submit');
-        fetch(`http://localhost:3000/users`, {
+        fetch(`${Url}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

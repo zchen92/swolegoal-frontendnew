@@ -25,7 +25,7 @@ export default class Login extends Component {
     };
     handleSubmit = event => {
         event.preventDefault();
-        fetch(`http://localhost:3000/users/login`, {
+        fetch(`${Url}/users/login`, {
             body: JSON.stringify({
                 user: {
                     username: this.state.username,

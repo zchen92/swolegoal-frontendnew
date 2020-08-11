@@ -96,7 +96,11 @@
     width: 25%;
     margin: 0 auto;
     /* margin-left: -20px; */
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+/* about page */
+.aboutParagraph {
+    margin:30px
 }

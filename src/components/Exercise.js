@@ -58,7 +58,7 @@ function Exercise(props) {
           'Content-Type': 'application/json'
         }
         }).then(response => response.json())
-        .then(jsonedExercise => fetch(`${Url}`)
+        .then(jsonedExercise => fetch(`${Url}/exercises`)
             .then(res => res.json())
             .then(jsonExercises=> setExercises(jsonExercises))
             .then(form.reset())
@@ -67,10 +67,10 @@ function Exercise(props) {
         }
 
         const handleDelete =(id, index) => {
-          fetch(`${Url}/${id}`, {
+          fetch(`${Url}/exercises/${id}`, {
               method: 'DELETE',
           }).then(() => {
-            fetch(`${Url}`)
+            fetch(`${Url}/exercises`)
             .then(res => res.json())
             .then(jsonExercises=> setExercises(jsonExercises))
             .catch(error => console.error(error))
@@ -89,7 +89,7 @@ function Exercise(props) {
                 day: editedDay,
                 description: editedDescription
             }
-            fetch(`${Url}/${exerciseToEdit.id}`, {
+            fetch(`${Url}/exercises/${exerciseToEdit.id}`, {
                 body: JSON.stringify(data),
                 method: 'PUT',
                 headers: {
@@ -99,7 +99,7 @@ function Exercise(props) {
             })
                 .then(response => response.json())
                 .then(updatedExercise => {
-                    fetch(`${Url}`)
+                    fetch(`${Url}/exercises`)
                     .then(res => res.json())
                     .then(jsonExercises=> setExercises(jsonExercises))
                     .then(setEditing(false))
@@ -116,7 +116,7 @@ function Exercise(props) {
         }
 
         const updateModalExercise = () => {
-            fetch(`${Url}/${modalExercise.id}`)
+            fetch(`${Url}/exercises/${modalExercise.id}`)
             .then((data)=>{
                 console.log(data)
                 return data.json()
@@ -124,7 +124,7 @@ function Exercise(props) {
         }
 
         const deleteGoal = (id, index) => {
-            fetch(`${Url}/${modalExercise.id}/goals/${id}`, {
+            fetch(`${Url}/exercises/${modalExercise.id}/goals/${id}`, {
                 method: 'DELETE',
             }).then(() => {
                 updateModalExercise()
@@ -143,7 +143,7 @@ function Exercise(props) {
                 description: newGoalDescription
             }
             console.log(modalExercise.id)
-            fetch(`${Url}/${modalExercise.id}/goals`, {
+            fetch(`${Url}/exercises/${modalExercise.id}/goals`, {
               body: JSON.stringify(data),
               method: 'POST',
             headers: {
@@ -151,7 +151,7 @@ function Exercise(props) {
               'Content-Type': 'application/json'
             }
             }).then(response => response.json())
-            .then(jsonedExercise => fetch(`${Url}`)
+            .then(jsonedExercise => fetch(`${Url}/exercises`)
             .then(res => res.json())
             .then(jsonExercises=> {
                 updateModalExercise()
@@ -223,7 +223,6 @@ function Exercise(props) {
                 </div> </div>: 
                 <div>
                     <div className="flexGoals">
-
                     <div className="flexGoalsLeft">
                             <div className="newGoalDiv">
                                 <h1>Add a new goal!</h1>
@@ -240,7 +239,6 @@ function Exercise(props) {
                                 <button onClick={toggleModal} type="button" className="btn btn-warning">See All Days</button>
                             </div>
                         </div>
-
                         <div className="flexGoalsRight">
                             <div className="myDay">
                                 <h1>This Is My Day</h1>
@@ -266,8 +264,6 @@ function Exercise(props) {
                                 })}
                             </div>
                         </div>
-
-                       
                     </div>
                 </div>
         }</div>
