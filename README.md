@@ -2,7 +2,7 @@
 
 ## Concept
 
-SwoleGoals is a full-CRUD application designed to help task-oriented users achieve their desired fitness goals. The idea was inspired by my inability to focus on fitness goals, often times forgetting the goals I set out to accomplish just the day prior. The application allows the user to create a secure account, and enters the day and the fitness goal for the day (i.e Mondays are my leg days). Within each day, they can enter specific activities they want to complete, along with a description of the activity, such as the number of sets or repetitions, duration of activity, or links to tutorials they want to refer to. The application is built using a one-t-many relationship with SQL and Ruby on Rails on the backend, React on the frontend, and basic CSS and Bootstrap for the final design. Simple as that. Let's get swole!
+SwoleGoals is a full-CRUD application designed to help task-oriented users achieve their desired fitness goals. The idea was inspired by my inability to focus on fitness goals, often times forgetting the goals I set out to accomplish just the day prior. The application allows the user to create a secure account, and enters the day and the fitness goal for the day (i.e Mondays are my leg days). Within each day, they can enter specific activities they want to complete, along with a description of the activity, such as the number of sets or repetitions, duration of activity, or links to tutorials they want to refer to. The application is built using a one-to-many relationship with SQL and Ruby on Rails on the backend, React on the frontend, and basic CSS and Bootstrap for the final design. Simple as that. Let's get swole!
 
 ## Technologies used
 1. Ruby on Rails
@@ -35,7 +35,7 @@ This application would ideally be employable through mobile applications. I want
 
 ## App Demo 
 Please take a look at my project 
-[SwoleGoals](https://github.com/zchen92/jobHunt/)
+[SwoleGoals](https://swolegoal-frontendnew.herokuapp.com/)
 
 ## Acknowledgements 
 Big thanks to Mike Bocon with helping me put this application together.
